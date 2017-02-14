@@ -10,3 +10,10 @@ The major components of the appilcation are:
 4. Invoice component which shows a list of pending invoices and status (paid or pending). Paid invoices can be deleted from here.</br>
 
 5. Invoice form component for generating invoices
+
+# Usage
+
+Unzip the node-modules folder ,navigate to the file via the command prompt,<br>
+1. npm install to install all the dependencies (make sure to delete the zip file and keep the unzipped node-modules folder before doing this)<br>
+2. npm start to start the server and kick off the aplication.<br>
+3. Navigate to localhost:4200 in your browser to see the aplication at work.
