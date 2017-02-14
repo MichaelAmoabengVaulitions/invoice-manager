@@ -1,0 +1,15 @@
+<!--Template for showing client invoice details-->
+<div class="container" *ngIf="invoice">
+
+      <h2>{{invoice.client}} details!</h2>
+      <ul class="list-group" >
+          <li class="list-group-item">Invoice Number(id): {{invoice.id}}</li>
+          <li class="list-group-item">ClientGroup: {{invoice.clientGroup}}</li>
+          <li class="list-group-item">Number of Parking Hours:{{invoice.parkingTime}}</li>
+          <li class="list-group-item">Due Date: {{invoice.dueDate}}</li>
+          <li class="list-group-item">Due Amount:<span class="glyphicon glyphicon-euro" aria-hidden="true"></span>{{invoice.grandTotal}}</li>
+      </ul>
+      <button class="btn btn-secondary" (click)="goBack()">Back</button>
+      <button class="btn btn-primary" (click)="save()">Save</button>
+
+</div>

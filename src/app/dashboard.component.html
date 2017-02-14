@@ -1,0 +1,15 @@
+<!--Show the list of active clients-->
+<div class="container">
+<div class="row">
+  <div class="col-md-6">
+    <h3>List of Active Clients</h3>
+    <ul class="list-group" *ngFor="let invoice of invoices"  [routerLink]="['/detail', invoice.id]">
+      <li class="list-group-item justify-content-between">
+        <a>{{invoice.client}}</a>
+        <span class="badge badge-default badge-pill">{{invoice.clientGroup}}</span>
+      </li>
+    </ul>
+  </div>
+</div>
+<invoice-search></invoice-search>
+</div>

@@ -1,0 +1,44 @@
+<!--Invoice list template-->
+
+<div class="container">
+
+
+  <div class="panel panel-primary">
+        <div class="panel-heading">Invoice List</div>
+        <table class="table">
+        <thead>
+        <tr>
+          <th>Invoice Number(id)</th>
+          <th>Client Name</th>
+          <th>Client Group</th>
+          <th>Parking Info(hrs)</th>
+          <th>Due Date</th>
+          <th>Due Amount</th>
+          <th>Payed</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let invoice of invoices"  [class.selected]="invoice === selectedInvoice"
+          (click)="onSelect(invoice)">
+          <th scope="row">{{invoice.id}}</th>
+          <td><a>{{invoice.client}}</a></td>
+          <td>{{invoice.clientGroup}}</td>
+          <td>{{invoice.parkingTime}}</td>
+          <td>{{invoice.dueDate}}</td>
+          <td><span class="glyphicon glyphicon-euro" aria-hidden="true"></span> {{invoice.grandTotal}}</td>
+          <td><span class="label label-danger">{{invoice.isPaid}}</span></td>
+          <td>  <button class="btn btn-success"
+              (click)="delete(invoice); $event.stopPropagation()">x</button></td>
+        </tr>
+        </tbody>
+        </table>
+
+    </div>
+
+    <div *ngIf="selectedInvoice">
+      <h2>
+        {{selectedInvoice.client | uppercase}} is a {{selectedInvoice.clientGroup}} user
+      </h2>
+      <button class="btn btn-secondary" (click)="gotoDetail()">View Details</button>
+    </div>
+  </div>

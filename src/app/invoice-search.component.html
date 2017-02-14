@@ -1,0 +1,12 @@
+<!--Search template-->
+
+<form class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input type="text" #searchBox placeholder="Search for invoice" (keyup)="search(searchBox.value)">
+  </div>
+
+  <div *ngFor="let invoice of invoices | async"
+  (click)="gotoDetail(invoice)" class="search-result" >
+
+    {{invoice.client}}
+  </div>
